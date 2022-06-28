@@ -10,6 +10,9 @@ import { getVaccineCalendar } from "@/api/ExaminationCalendar";
 import { Modalize } from "react-native-modalize";
 import { _format } from "@/utils";
 import { settings } from "@/config";
+import Ionicons from "react-native-vector-icons/Ionicons";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
+import Entypo from "react-native-vector-icons/Entypo";
 
 const {
   padding,

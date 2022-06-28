@@ -1,6 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { HeaderRoot } from "@/components";
 import { Container, Icon, Text, Toast, View } from "native-base";
+import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { AntDesign } from "@expo/vector-icons";
 import {
   StyleSheet,
   TouchableWithoutFeedback,
@@ -96,6 +99,9 @@ const DashboardScreen = (props: DashboardProps) => {
           <Text style={{ color: "#fff", fontSize: 30, fontWeight: "bold" }}>
             Image 2
           </Text>
+          <View>
+            <AntDesign name="stepforward" size={24} color="black" />
+          </View>
         </View>
         <View
           style={{
@@ -142,7 +148,8 @@ const DashboardScreen = (props: DashboardProps) => {
             />
             <View style={styles.menubox}>
               <TouchableOpacity
-                onPress={() => modal.current?.open()}
+                // onPress={() => modal.current?.open()}
+                onPress={() => modal.current?.open}
                 activeOpacity={0.9}
               >
                 <View
@@ -152,6 +159,16 @@ const DashboardScreen = (props: DashboardProps) => {
                 </View>
                 <Text style={styles.menutext}>ĐẶT LỊCH KHÁM</Text>
               </TouchableOpacity>
+              <TouchableWithoutFeedback onPress={() => nav("NormalSchedule")}>
+                <View style={{ backgroundColor: "red" }}>
+                  <Text>Button1</Text>
+                </View>
+              </TouchableWithoutFeedback>
+              <TouchableWithoutFeedback onPress={() => nav("SpecialSchedule")}>
+                <View style={{ backgroundColor: "blue" }}>
+                  <Text>Button2</Text>
+                </View>
+              </TouchableWithoutFeedback>
             </View>
           </View>
           <View
@@ -289,6 +306,7 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
   },
   menubox: {
+    backgroundColor: "green", // xoa
     width: "50%",
     padding: 20,
     alignItems: "center",
