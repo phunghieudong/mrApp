@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_840" data-name="Rectangle 840" width="20" height="20" transform="translate(225 850)" fill="#023047"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_248" data-name="Mask Group 248" transform="translate(-225 -850)" clip-path="url(#clip-path)">
+    <g id="criminal-record" transform="translate(226.154 850)">
+      <circle id="Ellipse_144" data-name="Ellipse 144" cx="3.445" cy="3.445" r="3.445" transform="translate(7.839 8.259)" fill="#023047"/>
+      <path id="Path_2153" data-name="Path 2153" d="M382.8,381.24l-3.04-3.04a4.823,4.823,0,0,1-1.562,1.562l3.04,3.04a1.1,1.1,0,0,0,1.562-1.562Z" transform="translate(-364.28 -364.279)" fill="#023047"/>
+      <g id="Group_856" data-name="Group 856">
+        <path id="Path_2154" data-name="Path 2154" d="M12.144,8.787,8.787,12.144h3.357Z" transform="translate(-8.464 -8.464)" fill="#023047"/>
+        <path id="Path_2155" data-name="Path 2155" d="M90,211.84h3.681A4.809,4.809,0,0,1,95.044,210H90Z" transform="translate(-86.687 -202.27)" fill="#023047"/>
+        <path id="Path_2156" data-name="Path 2156" d="M6.682,10.675H2.761a.552.552,0,0,1-.552-.552V7.178a.552.552,0,0,1,.552-.552h8.65a4.761,4.761,0,0,1,2.945,1.016V1.656A1.658,1.658,0,0,0,12.7,0H4.785V4.233a.552.552,0,0,1-.552.552H0v12.4a1.658,1.658,0,0,0,1.656,1.656H12.7a1.659,1.659,0,0,0,1.635-1.389l-1.483-1.483a4.78,4.78,0,0,1-4.494-.883h-5.6a.552.552,0,1,1,0-1.1H7.38a4.767,4.767,0,0,1-.522-1.1h-4.1a.552.552,0,0,1,0-1.1H6.64A4.914,4.914,0,0,1,6.682,10.675Zm4.913-5.153H6.442a.552.552,0,1,1,0-1.1h5.153a.552.552,0,0,1,0,1.1Zm0-2.209H6.442a.552.552,0,1,1,0-1.1h5.153a.552.552,0,0,1,0,1.1Z" fill="#023047"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="36" viewBox="0 0 36 36">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_1074" data-name="Rectangle 1074" width="36" height="36" transform="translate(123 334)" fill="#142977"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_388" data-name="Mask Group 388" transform="translate(-123 -334)" clip-path="url(#clip-path)">
+    <g id="hospital-5" transform="translate(123 334)">
+      <g id="Group_1032" data-name="Group 1032">
+        <g id="Group_1031" data-name="Group 1031">
+          <g id="Group_1030" data-name="Group 1030">
+            <g id="Group_1029" data-name="Group 1029">
+              <g id="Group_1028" data-name="Group 1028">
+                <g id="Group_1027" data-name="Group 1027">
+                  <path id="Path_2349" data-name="Path 2349" d="M14.139,18.885h7.722V31.1H14.139Z" fill="#b2f0fb"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="Group_1033" data-name="Group 1033">
+        <path id="Path_2350" data-name="Path 2350" d="M13.835,12.679h1.918V14.6a.7.7,0,0,0,.7.7h3.088a.7.7,0,0,0,.7-.7V12.679h1.918a.7.7,0,0,0,.7-.7V8.888a.7.7,0,0,0-.7-.7H20.247V6.267a.7.7,0,0,0-.7-.7H16.456a.7.7,0,0,0-.7.7V8.185H13.835a.7.7,0,0,0-.7.7v3.088a.7.7,0,0,0,.7.7Zm.7-3.088h1.918a.7.7,0,0,0,.7-.7V6.97h1.681V8.888a.7.7,0,0,0,.7.7h1.918v1.682H19.544a.7.7,0,0,0-.7.7v1.918H17.159V11.975a.7.7,0,0,0-.7-.7H14.538Z" fill="#142977"/>
+        <path id="Path_2351" data-name="Path 2351" d="M35.3,30.394h-.612V14.351a.7.7,0,0,0-.7-.7H26.875V2.681h.038a.7.7,0,0,0,0-1.406H9.087a.7.7,0,0,0,0,1.406h.038V13.648H2.018a.7.7,0,0,0-.7.7V30.394H.7a.7.7,0,0,0-.7.7v2.925a.7.7,0,0,0,.7.7H35.3a.7.7,0,0,0,.7-.7V31.1a.7.7,0,0,0-.7-.7Zm-2.018-15.34V19.08h-2.6a.7.7,0,0,0,0,1.406h2.6V24.9h-2.6a.7.7,0,0,0,0,1.406h2.6v4.092h-6.4V15.054ZM25.468,2.681V30.394H10.532V2.681ZM2.721,26.3h2.6a.7.7,0,0,0,0-1.406h-2.6v-4.41h2.6a.7.7,0,0,0,0-1.406h-2.6V15.054h6.4v15.34h-6.4Zm31.873,7.017H1.406V31.8H34.594Z" fill="#142977"/>
+      </g>
+    </g>
+  </g>
+</svg>

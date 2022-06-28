@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="36" viewBox="0 0 36 36">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_786" data-name="Rectangle 786" width="36" height="36" transform="translate(123 170)" fill="#142977" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_387" data-name="Mask Group 387" transform="translate(-123 -170)" clip-path="url(#clip-path)">
+    <g id="stethoscope-2" transform="translate(123 170)">
+      <g id="Group_1013" data-name="Group 1013">
+        <g id="Group_1006" data-name="Group 1006">
+          <g id="Group_1005" data-name="Group 1005">
+            <g id="Group_1004" data-name="Group 1004">
+              <g id="Group_1003" data-name="Group 1003">
+                <g id="Group_1002" data-name="Group 1002">
+                  <path id="Path_2346" data-name="Path 2346" d="M15.369,36a3.713,3.713,0,0,1-3.709-3.708V25.109a.7.7,0,0,1,1.406,0v7.183a2.3,2.3,0,0,0,4.605,0V24.123a2.562,2.562,0,0,1,5.123,0v4.195a3.067,3.067,0,0,0,6.134,0V16.347a.7.7,0,1,1,1.406,0V28.318a4.473,4.473,0,0,1-8.946,0V24.123a1.155,1.155,0,0,0-2.311,0v8.169A3.713,3.713,0,0,1,15.369,36Z" fill="#142977"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="Group_1012" data-name="Group 1012">
+          <g id="Group_1011" data-name="Group 1011">
+            <g id="Group_1010" data-name="Group 1010">
+              <g id="Group_1009" data-name="Group 1009">
+                <g id="Group_1008" data-name="Group 1008">
+                  <g id="Group_1007" data-name="Group 1007">
+                    <ellipse id="Ellipse_159" data-name="Ellipse 159" cx="2.129" cy="2.128" rx="2.129" ry="2.128" transform="translate(10.234 21.56)" fill="#b2f0fb"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="Group_1026" data-name="Group 1026">
+        <path id="Path_2347" data-name="Path 2347" d="M22.341,7.293H21.63V1.739a.7.7,0,0,0-.7-.7H17.007V.7A.7.7,0,0,0,15.6.7V2.774a.7.7,0,0,0,1.406,0V2.442h3.216V7.293h-.711a.7.7,0,0,0-.7.7v3.342a6.446,6.446,0,0,1-12.892,0V8a.7.7,0,0,0-.7-.7H4.5V2.442H7.719v.332a.7.7,0,0,0,1.406,0V.7A.7.7,0,0,0,7.719.7v.333H3.8a.7.7,0,0,0-.7.7V7.293H2.385a.7.7,0,0,0-.7.7v3.342a10.682,10.682,0,0,0,21.363,0V8a.7.7,0,0,0-.7-.7Zm-.7,4.045a9.275,9.275,0,0,1-18.551,0V8.7H4.511v2.639a7.852,7.852,0,0,0,15.7,0V8.7h1.423Z" fill="#142977"/>
+        <g id="Group_1019" data-name="Group 1019">
+          <g id="Group_1018" data-name="Group 1018">
+            <g id="Group_1017" data-name="Group 1017">
+              <g id="Group_1016" data-name="Group 1016">
+                <g id="Group_1015" data-name="Group 1015">
+                  <g id="Group_1014" data-name="Group 1014">
+                    <ellipse id="Ellipse_160" data-name="Ellipse 160" cx="4.687" cy="4.685" rx="4.687" ry="4.685" transform="translate(24.945 7.306)" fill="#b2f0fb"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="Group_1025" data-name="Group 1025">
+          <g id="Group_1024" data-name="Group 1024">
+            <g id="Group_1023" data-name="Group 1023">
+              <g id="Group_1022" data-name="Group 1022">
+                <g id="Group_1021" data-name="Group 1021">
+                  <g id="Group_1020" data-name="Group 1020">
+                    <path id="Path_2348" data-name="Path 2348" d="M29.632,14.241a2.25,2.25,0,1,1,2.25-2.25A2.252,2.252,0,0,1,29.632,14.241Zm0-3.093a.843.843,0,1,0,.844.843A.845.845,0,0,0,29.632,11.148Z" fill="#142977"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

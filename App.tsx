@@ -1,20 +1,50 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import "react-native-gesture-handler";
+import AppNavigator from "@/navigation/AppNavigator";
+import store from "@/store";
+import React, { useState } from "react";
+import { Provider } from "react-redux";
+import * as Font from "expo-font";
+import AppLoading from "expo-app-loading";
+import { Root } from "native-base";
+import { LogBox } from "react-native";
 
-export default function App() {
+LogBox.ignoreAllLogs();
+
+const fetchFonts = () => {
+  return Font.loadAsync({
+    Roboto: require("native-base/Fonts/Roboto.ttf"),
+    Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf"),
+    "GoogleSans-Bold": require("@/assets/fonts/GoogleSans-Bold.ttf"),
+    "GoogleSans-Regular": require("@/assets/fonts/GoogleSans-Regular.ttf"),
+    "SFProDisplay-Bold": require("@/assets/fonts/SFProDisplay-Bold.ttf"),
+    "SFProDisplay-Heavy": require("@/assets/fonts/SFProDisplay-Heavy.ttf"),
+    "SFProDisplay-Light": require("@/assets/fonts/SFProDisplay-Light.ttf"),
+    "SFProDisplay-Medium": require("@/assets/fonts/SFProDisplay-Medium.ttf"),
+    "SFProDisplay-Regular": require("@/assets/fonts/SFProDisplay-Regular.ttf"),
+    "SFProDisplay-Semibold": require("@/assets/fonts/SFProDisplay-Semibold.ttf"),
+  });
+};
+
+const App = (props) => {
+  const [ready, setReady] = useState(false);
+
+  if (!ready) {
+    return (
+      <AppLoading
+        startAsync={fetchFonts}
+        onFinish={() => setReady(true)}
+        onError={() => console.log("ERROR FETCH FONTS")}
+      />
+    );
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Provider store={store}>
+      <Root>
+        <AppNavigator {...props} />
+      </Root>
+    </Provider>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;

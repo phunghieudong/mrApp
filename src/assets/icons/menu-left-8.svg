@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_1070" data-name="Rectangle 1070" width="20" height="20" transform="translate(37 618)" fill="#219ebc" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_344" data-name="Mask Group 344" transform="translate(-37 -618)" clip-path="url(#clip-path)">
+    <g id="Layer_2" data-name="Layer 2" transform="translate(35.571 616.571)">
+      <path id="Path_2248" data-name="Path 2248" d="M20,2.857H8.571a1.429,1.429,0,0,0,0,2.857H20a1.429,1.429,0,1,0,0-2.857Z" fill="#219ebc"/>
+      <circle id="Ellipse_146" data-name="Ellipse 146" cx="1.429" cy="1.429" r="1.429" transform="translate(1.429 2.857)" fill="#219ebc"/>
+      <path id="Path_2249" data-name="Path 2249" d="M20,10H8.571a1.429,1.429,0,0,0,0,2.857H20A1.429,1.429,0,1,0,20,10Z" fill="#219ebc"/>
+      <circle id="Ellipse_147" data-name="Ellipse 147" cx="1.429" cy="1.429" r="1.429" transform="translate(1.429 10)" fill="#219ebc"/>
+      <path id="Path_2250" data-name="Path 2250" d="M20,17.143H8.571a1.429,1.429,0,0,0,0,2.857H20a1.429,1.429,0,1,0,0-2.857Z" fill="#219ebc"/>
+      <circle id="Ellipse_148" data-name="Ellipse 148" cx="1.429" cy="1.429" r="1.429" transform="translate(1.429 17.143)" fill="#219ebc"/>
+    </g>
+  </g>
+</svg>
