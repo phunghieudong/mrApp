@@ -306,7 +306,6 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
   },
   menubox: {
-    backgroundColor: "green", // xoa
     width: "50%",
     padding: 20,
     alignItems: "center",
