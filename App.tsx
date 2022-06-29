@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { Provider } from "react-redux";
 import * as Font from "expo-font";
 import AppLoading from "expo-app-loading";
-import { Root } from "native-base";
+import { Root, View } from "native-base";
 import { LogBox } from "react-native";
 
 LogBox.ignoreAllLogs();
@@ -43,6 +43,8 @@ const App = (props) => {
       <Root>
         <AppNavigator {...props} />
       </Root>
+
+      {/* <AppNavigator {...props} /> */}
     </Provider>
   );
 };
