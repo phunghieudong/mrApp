@@ -179,11 +179,11 @@ const SignInScreen = (props: SignInProps) => {
             >
               <View style={styles.socialsigninitem}>
                 <View style={styles.socialsigninbox}>
-                  <Icon
+                  {/* <Icon
                     type="FontAwesome"
                     name="facebook"
                     style={styles.socialsigninicon}
-                  />
+                  /> */}
                 </View>
                 <Text style={styles.socialsignintext}>Facebook</Text>
               </View>

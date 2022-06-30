@@ -7,6 +7,8 @@ import * as Font from "expo-font";
 import AppLoading from "expo-app-loading";
 import { Root, View } from "native-base";
 import { LogBox } from "react-native";
+import Dong from "react-native-vector-icons/FontAwesome";
+import { Text } from "react-native-svg";
 
 LogBox.ignoreAllLogs();
 

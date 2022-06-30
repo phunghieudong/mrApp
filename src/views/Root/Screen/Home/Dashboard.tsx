@@ -1,9 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { HeaderRoot } from "@/components";
 import { Container, Icon, Text, Toast, View } from "native-base";
-import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
+// import FontAwesome from "react-native-vector-icons/FontAwesome";
+import Iconnew from "react-native-vector-icons/MaterialCommunityIcons";
+
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { AntDesign } from "@expo/vector-icons";
+import Modal from "react-native-modal";
 import {
   StyleSheet,
   TouchableWithoutFeedback,
@@ -52,7 +55,7 @@ const DashboardScreen = (props: DashboardProps) => {
   };
 
   return (
-    <Container style={styles.container}>
+    <View style={styles.container}>
       <HeaderRoot title="Trang chủ" />
       {/* <View style={styles.info}>
         <Image
@@ -66,6 +69,7 @@ const DashboardScreen = (props: DashboardProps) => {
         <Text style={styles.fullname}>{user.UserFullName}</Text>
         <Text style={styles.code}>{"TA - " + user.Id}</Text>
       </View> */}
+
       <Swiper
         showsButtons={false}
         height={160}
@@ -79,16 +83,59 @@ const DashboardScreen = (props: DashboardProps) => {
         <View
           style={{
             flex: 1,
-            justifyContent: "center",
+            flexDirection: "row",
+            justifyContent: "flex-start",
+            padding: 24,
             alignItems: "center",
             backgroundColor: "#9DD6EB",
           }}
         >
-          <Text style={{ color: "#fff", fontSize: 30, fontWeight: "bold" }}>
-            Image 1
-          </Text>
+          <Image
+            defaultSource={require("@/assets/images/no-avatar.jpg")}
+            onError={() => setAvatar(null)}
+            source={
+              !avatar
+                ? require("@/assets/images/no-avatar.jpg")
+                : { uri: avatar }
+            }
+            style={styles.avatar}
+          />
+          <View
+            style={{
+              padding: 24,
+              flexDirection: "column",
+              alignItems: "flex-start",
+            }}
+          >
+            <View style={{ justifyContent: "flex-end" }}>
+              <Text style={styles.fullname}>{user.UserFullName}</Text>
+            </View>
+            <View
+              style={{
+                justifyContent: "center",
+                backgroundColor: "#FFB703",
+                width: 151,
+                height: 36,
+                borderRadius: 8,
+                alignItems: "center",
+                flexDirection: "row",
+              }}
+            >
+              <Text style={styles.code}>{"TA - " + user.Id}</Text>
+              <Iconnew
+                name="file-multiple-outline"
+                style={{
+                  backgroundColor: "#FFB703",
+                  color: "white",
+                  borderRadius: 5,
+                  fontSize: 20,
+                  paddingRight: 30,
+                }}
+              />
+            </View>
+          </View>
         </View>
-        <View
+        {/* <View
           style={{
             flex: 1,
             justifyContent: "center",
@@ -102,8 +149,8 @@ const DashboardScreen = (props: DashboardProps) => {
           <View>
             <AntDesign name="stepforward" size={24} color="black" />
           </View>
-        </View>
-        <View
+        </View> */}
+        {/* <View
           style={{
             flex: 1,
             justifyContent: "center",
@@ -114,8 +161,16 @@ const DashboardScreen = (props: DashboardProps) => {
           <Text style={{ color: "#fff", fontSize: 30, fontWeight: "bold" }}>
             Image 3
           </Text>
-        </View>
+        </View> */}
       </Swiper>
+      <View>
+        <View>
+          <Text>Danh mục</Text>
+        </View>
+        <View>
+          <Text>Hôm nay bạn muốn xem gì ?</Text>
+        </View>
+      </View>
       <View style={styles.body}>
         <View style={styles.menu}>
           <View style={[styles.flex, { alignItems: "stretch" }]}>
@@ -149,7 +204,7 @@ const DashboardScreen = (props: DashboardProps) => {
             <View style={styles.menubox}>
               <TouchableOpacity
                 // onPress={() => modal.current?.open()}
-                onPress={() => modal.current?.open}
+                onPress={() => modal.current?.close}
                 activeOpacity={0.9}
               >
                 <View
@@ -159,16 +214,16 @@ const DashboardScreen = (props: DashboardProps) => {
                 </View>
                 <Text style={styles.menutext}>ĐẶT LỊCH KHÁM</Text>
               </TouchableOpacity>
-              <TouchableWithoutFeedback onPress={() => nav("NormalSchedule")}>
+              {/* <TouchableWithoutFeedback onPress={() => nav("NormalSchedule")}>
                 <View style={{ backgroundColor: "red" }}>
                   <Text>Button1</Text>
                 </View>
-              </TouchableWithoutFeedback>
-              <TouchableWithoutFeedback onPress={() => nav("SpecialSchedule")}>
+              </TouchableWithoutFeedback> */}
+              {/* <TouchableWithoutFeedback onPress={() => nav("SpecialSchedule")}>
                 <View style={{ backgroundColor: "blue" }}>
                   <Text>Button2</Text>
                 </View>
-              </TouchableWithoutFeedback>
+              </TouchableWithoutFeedback> */}
             </View>
           </View>
           <View
@@ -228,8 +283,23 @@ const DashboardScreen = (props: DashboardProps) => {
             </View>
           </View>
         </View>
+        <View
+          style={{ backgroundColor: "green", borderRadius: 20, padding: 20 }}
+        >
+          <TouchableOpacity>
+            <Text>Dich vu cham soc suc khoe (theo mo ta Mr.Oh)</Text>
+          </TouchableOpacity>
+        </View>
+
+        <View
+          style={{ backgroundColor: "yellow", borderRadius: 20, padding: 20 }}
+        >
+          <TouchableOpacity>
+            <Text>Modal</Text>
+          </TouchableOpacity>
+        </View>
       </View>
-      <ModalBottom heading="Đặt lịch khám" ref={modal}>
+      <ModalBottom heading="Đặt lịch khám">
         <View style={{ paddingHorizontal: 30, paddingVertical: 20 }}>
           <TouchableWithoutFeedback onPress={() => nav("NormalSchedule")}>
             <View style={[styles.box, { marginBottom: 6 }]}>
@@ -253,7 +323,7 @@ const DashboardScreen = (props: DashboardProps) => {
           </TouchableWithoutFeedback>
         </View>
       </ModalBottom>
-    </Container>
+    </View>
   );
 };
 
@@ -287,11 +357,12 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   code: {
-    color: mainColorText,
+    color: "white",
     fontFamily: "SFProDisplay-Medium",
     fontSize: 18,
     lineHeight: 30,
     textAlign: "center",
+    paddingRight: 30,
   },
   body: {
     // paddingTop: 30,
