@@ -31,6 +31,9 @@ const {
 const SignInScreen = (props: SignInProps) => {
   const { navigation } = props;
 
+  const [userName, setUserName] = useState<string>("123123123");
+  const [password, setPassword] = useState<string>("12345678");
+
   // redux
   const dispatch = useAppDispatch();
 
@@ -49,7 +52,7 @@ const SignInScreen = (props: SignInProps) => {
       pattern: new RegExp("[a-zA-Z0-9_.+-@]+$"),
     });
     register("password", {
-      required: true,
+      // required: true,
       minLength: 8,
       maxLength: 128,
       pattern: new RegExp("[a-zA-Z0-9_.+-@]+$"),
@@ -119,7 +122,7 @@ const SignInScreen = (props: SignInProps) => {
       <Form style={styles.frmcontrol}>
         <InputBlock
           owner="userName"
-          placeholder="SỐ ĐIỆN THOẠI"
+          placeholder="Tên đăng nhập"
           onValueChange={onValueChange}
           onTrigger={onTrigger}
           errors={errors.userName}
@@ -131,7 +134,7 @@ const SignInScreen = (props: SignInProps) => {
         <InputBlock
           hide
           owner="password"
-          placeholder="MẬT KHẨU"
+          placeholder="Mật khẩu"
           onValueChange={onValueChange}
           onTrigger={onTrigger}
           errors={errors.password}
@@ -156,67 +159,56 @@ const SignInScreen = (props: SignInProps) => {
             ĐĂNG NHẬP
           </Text>
         </View>
+
         <Text style={styles.otherssignin}>HOẶC ĐĂNG NHẬP BẰNG</Text>
-        <View style={{ alignSelf: "center" }}>
-          <View style={styles.socialsignin}>
-            <TouchableWithoutFeedback
-              onPress={() =>
-                Toast.show({ text: "Tính năng còn đang phát triển" })
-              }
-            >
-              <View style={styles.socialsigninitem}>
-                <Image
-                  source={require("@/assets/icons/zalo.png")}
-                  style={styles.socialsigninbox}
+        <View style={styles.submitmedia}>
+          <Text style={styles.submittextmedia}>ĐĂNG NHẬP BẰNG FACEBOOK</Text>
+          <TouchableWithoutFeedback
+            onPress={() =>
+              Toast.show({ text: "Tính năng còn đang phát triển" })
+            }
+          >
+            <View style={styles.socialsigninitemface}>
+              <View style={styles.socialsigninbox}>
+                <Icon
+                  type="FontAwesome"
+                  name="facebook"
+                  style={styles.socialsigninicon}
                 />
-                <Text style={styles.socialsignintext}>Zalo</Text>
               </View>
-            </TouchableWithoutFeedback>
-            <TouchableWithoutFeedback
-              onPress={() =>
-                Toast.show({ text: "Tính năng còn đang phát triển" })
-              }
-            >
-              <View style={styles.socialsigninitem}>
-                <View style={styles.socialsigninbox}>
-                  {/* <Icon
-                    type="FontAwesome"
-                    name="facebook"
-                    style={styles.socialsigninicon}
-                  /> */}
-                </View>
-                <Text style={styles.socialsignintext}>Facebook</Text>
+            </View>
+          </TouchableWithoutFeedback>
+        </View>
+        <View style={styles.submitmedia}>
+          <Text style={styles.submittextmedia}>ĐĂNG NHẬP BẰNG GOOGLE</Text>
+          <TouchableWithoutFeedback
+            onPress={() =>
+              Toast.show({ text: "Tính năng còn đang phát triển" })
+            }
+          >
+            <View style={styles.socialsigninitem}>
+              <View
+                style={[styles.socialsigninbox, { backgroundColor: "#E92928" }]}
+              >
+                <Icon
+                  type="FontAwesome"
+                  name="google"
+                  style={styles.socialsigninicon}
+                />
               </View>
-            </TouchableWithoutFeedback>
-            <TouchableWithoutFeedback
-              onPress={() =>
-                Toast.show({ text: "Tính năng còn đang phát triển" })
-              }
-            >
-              <View style={styles.socialsigninitem}>
-                <View
-                  style={[
-                    styles.socialsigninbox,
-                    { backgroundColor: "#E92928" },
-                  ]}
-                >
-                  <Icon
-                    type="FontAwesome"
-                    name="google"
-                    style={styles.socialsigninicon}
-                  />
-                </View>
-                <Text style={styles.socialsignintext}>Google</Text>
-              </View>
-            </TouchableWithoutFeedback>
-          </View>
+            </View>
+          </TouchableWithoutFeedback>
+        </View>
+
+        <View style={{ alignSelf: "center" }}>
+          <View style={styles.socialsignin}></View>
           <Text style={styles.register}>
-            Bạn Chưa Có Tài Khoản?{" "}
+            Bạn chưa có tài khoản ?{" "}
             <Text
               style={styles.registerlink}
               onPress={() => navigation.navigate("Register")}
             >
-              ĐĂNG KÝ
+              Đăng ký
             </Text>
           </Text>
         </View>
@@ -302,6 +294,21 @@ const styles = StyleSheet.create({
     marginTop: 26,
     borderRadius: 100,
     alignSelf: "center",
+    width: 332,
+    height: 57,
+    alignItems: "center",
+  },
+  submitmedia: {
+    backgroundColor: "white",
+    marginTop: 26,
+    borderRadius: 100,
+    flexDirection: "row-reverse",
+    alignSelf: "center",
+    borderWidth: 0.1,
+    width: 332,
+    height: 57,
+    alignItems: "center",
+    justifyContent: "center",
   },
   submittext: {
     paddingHorizontal: 60,
@@ -311,7 +318,19 @@ const styles = StyleSheet.create({
     fontSize: 16,
     letterSpacing: 1.25,
     color: "#fff",
+    flexDirection: "row",
   },
+  submittextmedia: {
+    paddingTop: 15,
+    paddingBottom: 17,
+    fontFamily: "SFProDisplay-Semibold",
+    fontSize: 16,
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginLeft: 20,
+    color: "#023047",
+  },
+
   loading: {
     ...(StyleSheet.absoluteFill as {}),
     backgroundColor: "#ffffff3a",
@@ -322,7 +341,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     letterSpacing: 1.25,
     fontFamily: "SFProDisplay-Semibold",
-    color: mainColorText,
+    color: "#FB8500",
   },
   otherssignin: {
     fontSize: 12,
@@ -339,7 +358,12 @@ const styles = StyleSheet.create({
     marginTop: 18,
   },
   socialsigninitem: {
-    alignItems: "center",
+    alignItems: "flex-end",
+    marginLeft: -50,
+  },
+  socialsigninitemface: {
+    alignItems: "flex-end",
+    marginLeft: -30,
   },
   socialsigninbox: {
     width: 34,
@@ -349,6 +373,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#3B5998",
   },
+
   socialsigninicon: {
     color: "#fff",
     fontSize: 15,

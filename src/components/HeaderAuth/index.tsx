@@ -30,15 +30,17 @@ const CustomHeaderAuth = (props: Props) => {
               name="chevron-back-sharp"
             />
           </View>
-          <Text style={styles.backtext}>TRỞ LẠI</Text>
+          <View>
+            <Text style={styles.backtext}>TRỞ LẠI</Text>
+          </View>
         </Left>
       </TouchableWithoutFeedback>
       <Right style={styles.right}>
         <Text
           style={styles.signin}
-          onPress={signOut ? signOut : () => navigation.navigate("SignIn")}
+          onPress={signOut ? signOut : () => navigation.navigate("Register")}
         >
-          ĐĂNG NHẬP
+          Đăng kí ngay
         </Text>
       </Right>
     </Header>
@@ -56,10 +58,17 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     paddingVertical: 8,
+    justifyContent: "center",
     left: -6,
   },
   back: {
     marginRight: 8,
+    backgroundColor: "#FB8500",
+    borderRadius: 100,
+    height: 40,
+    justifyContent: "center",
+    alignItems: "center",
+    width: 40,
   },
   backicon: {
     fontSize: 20,
@@ -68,14 +77,16 @@ const styles = StyleSheet.create({
   backtext: {
     fontSize: 16,
     fontFamily: "SFProDisplay-Regular",
-    color: goldColor,
+    color: "white",
   },
-  right: {},
+  right: {
+    borderRadius: 100,
+  },
   signin: {
     fontSize: 14,
     letterSpacing: 1.25,
     fontFamily: "SFProDisplay-Semibold",
-    color: goldColor,
+    color: "#FB8500",
   },
 });
 

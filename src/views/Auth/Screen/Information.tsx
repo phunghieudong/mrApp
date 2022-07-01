@@ -6,6 +6,7 @@ import { changeRoute } from "@/store/reducers/RouteSlice";
 import { Content, Icon, Text, Toast, View } from "native-base";
 import React, { useRef, useState } from "react";
 import { TouchableWithoutFeedback } from "react-native";
+import Phone from "react-native-vector-icons/Foundation";
 import {
   StatusBar,
   StyleSheet,
@@ -102,8 +103,20 @@ const InformationScreen = (props: InformationProps) => {
           </View>
         </TouchableWithoutFeedback>
       </View>
-      <Text style={styles.register}>Đăng ký LẤY SỐ thứ tự khám bệnh</Text>
-      <Text style={styles.where}>Tại các bệnh viện trong và ngoài nước</Text>
+      <View
+        style={{
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "space-between",
+          alignContent: "center",
+        }}
+      >
+        <Text style={styles.register}>Đăng kí lấy số </Text>
+        <Text style={styles.register}>thứ tự khám bệnh</Text>
+
+        <Text style={styles.where}>Tại các bệnh viện trong và ngoài nước</Text>
+      </View>
+
       <View style={styles.coop}>
         <Image
           source={require("@/assets/images/hospital-1.png")}
@@ -130,13 +143,7 @@ const InformationScreen = (props: InformationProps) => {
           style={styles.coopimg}
         />
       </View>
-      <Text style={styles.service}>
-        <Text style={styles.servicebold}>{"Ứng dụng tiện ích từ A —> Z."}</Text>{" "}
-        Đăng kí lấy số thứ tự cho các dịch vụ tại bệnh viện, lưu hồ sơ bệnh án
-        trọn đời, từ trong bụng mẹ, theo dõi và đăng kí chích ngừa cho trẻ,
-        thanh toán online, chụp hình, quét mã QR lấy kết quả xét nghiệm…{" "}
-        <Text style={styles.servicebold}>Với Mr.ApP bạn chỉ cần 30 GIÂY</Text>
-      </Text>
+
       <View style={styles.footer}>
         <TouchableWithoutFeedback onPress={navigate}>
           <View style={styles.footerbuttonlarge}>
@@ -147,11 +154,7 @@ const InformationScreen = (props: InformationProps) => {
           onPress={() => Toast.show({ text: "Chức năng còn đang phát triển" })}
         >
           <View style={styles.footerbuttonsmall}>
-            <Icon
-              type="Ionicons"
-              name="chatbubble-ellipses"
-              style={styles.footericon}
-            />
+            <Phone name="telephone-accessible" style={styles.footericon} />
             <Text style={styles.footertextsmall}>Liên hệ</Text>
           </View>
         </TouchableWithoutFeedback>
@@ -225,13 +228,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginVertical: 26,
+    marginRight: 23,
   },
   languagelabel: {
     fontSize: 12,
     color: mainColorText,
     opacity: 0.7,
     fontFamily: "SFProDisplay-Regular",
-    marginRight: 8,
+    marginRight: 23,
   },
   languageselected: {
     paddingHorizontal: 15,
@@ -254,7 +258,7 @@ const styles = StyleSheet.create({
   },
   languageicon: {
     fontSize: 12,
-    color: selectColor,
+    color: "#FB8500",
   },
   register: {
     fontSize: 40,
@@ -266,6 +270,7 @@ const styles = StyleSheet.create({
   where: {
     fontSize: 20,
     lineHeight: 44,
+    fontWeight: "100",
     fontFamily: "SFProDisplay-Bold",
     color: orangeColor,
   },
@@ -333,7 +338,7 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
   footericon: {
-    fontSize: 14,
+    fontSize: 25,
     marginRight: 10,
     color: "#fff",
   },

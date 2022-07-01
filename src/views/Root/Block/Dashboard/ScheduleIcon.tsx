@@ -5,7 +5,7 @@ const mainColor = "#fff";
 
 const ScheduleIcon = () => {
   return (
-    <Svg width="50" height="50" viewBox="0 0 50 50">
+    <Svg width="25" height="25" viewBox="0 0 50 50">
       <Defs>
         <ClipPath id="clip-path">
           <Rect

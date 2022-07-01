@@ -3,7 +3,7 @@ import Svg, { ClipPath, Defs, G, Path, Rect } from "react-native-svg";
 
 const AdultVaccinationCalendarIcon = () => {
   return (
-    <Svg width="50" height="50" viewBox="0 0 50 50">
+    <Svg width="25" height="25" viewBox="0 0 50 50">
       <Defs>
         <ClipPath id="a">
           <Rect

@@ -310,268 +310,286 @@ const RegisterScreen = (props: RegisterProps) => {
     <Container style={styles.container}>
       <HeaderAuth />
       <Content style={styles.body}>
-        <HeadingAuth text="ĐĂNG KÝ NGAY" align="left" />
-        <Form style={styles.frmcontrol}>
-          <InputBlock
-            owner="userFullName"
-            placeholder="HỌ VÀ TÊN"
-            onValueChange={onValueChange}
-            onTrigger={onTrigger}
-            errors={errors.userFullName}
-            errorMess={{
-              required: "Họ và tên không được bỏ trống",
-              minLength: "Họ và tên phải ít nhất 6 kí tự",
-              pattern: "Họ và tên không hợp lệ",
-            }}
-          />
-          <InputBlock
-            userName
-            keyboardType="numeric"
-            owner="phone"
-            placeholder="SỐ ĐIỆN THOẠI"
-            onValueChange={onValueChange}
-            onTrigger={onTrigger}
-            errors={errors.phone}
-            errorMess={{
-              required: "Số điện thoại không được để trống",
-              minLength: "Số điện thoại phải từ 9 đến 11 kí tự",
-              maxLength: "Số điện thoại phải từ 9 đến 11 kí tự",
-              pattern: "Số điện thoại không hợp lệ",
-            }}
-          />
-          <InputBlock
-            owner="email"
-            placeholder="EMAIL"
-            onValueChange={onValueChange}
-            onTrigger={onTrigger}
-            errors={errors.email}
-            errorMess={{
-              required: "Email không được bỏ trống",
-              validate: "Email không hợp lệ",
-            }}
-          />
-          <InputBlock
-            keyboardType="numeric"
-            owner="identityCardNo"
-            placeholder="CMND / CCCD"
-            onValueChange={onValueChange}
-            onTrigger={onTrigger}
-            errors={errors.identityCardNo}
-            errorMess={{
-              required: "CMND / CCCD không được bỏ trống",
-              minLength: "CMND / CCCD phải ít nhất 9 kí tự",
-              pattern: "CMND / CCCD không hợp lệ",
-            }}
-          />
-          <DateTimePickerBlock
-            owner="birthDate"
-            placeholder="NGÀY SINH"
-            errors={errors.birthDate}
-            errorMess={{ required: "Vui lòng chọn ngày sinh" }}
-            onTrigger={onTrigger}
-            onValueChange={onValueChange}
-            maximumDate={new Date()}
-          />
-          <PickerBlock
-            refresh={0}
-            data={genders}
-            picker
-            placeholder="GIỚI TÍNH"
-            item={{
-              itemOwner: "gender",
-              itemLabel: "Name",
-              itemValue: "Id",
-            }}
-            onValueChange={onValueChange}
-            onTrigger={onTrigger}
-            errors={errors.gender}
-            errorMess={{ required: "VUI LÒNG CHỌN GIỚI TÍNH" }}
-          />
-          <PickerBlock
-            data={jobs}
-            refresh={0}
-            search="Nhập nghề nghiệp"
-            placeholder="NGHỀ NGHIỆP"
-            item={{
-              itemOwner: "jobId",
-              itemLabel: "Name",
-              itemValue: "Id",
-            }}
-            onValueChange={onValueChange}
-            onTrigger={onTrigger}
-            errors={errors.jobId}
-            errorMess={{
-              required: "VUI LÒNG CHỌN NGHỀ NGHIỆP",
-            }}
-          />
-          <PickerBlock
-            data={countries}
-            refresh={1}
-            search="Nhập quốc gia"
-            placeholder="QUỐC GIA"
-            item={{
-              itemOwner: "countryId",
-              itemLabel: "Name",
-              itemValue: "Id",
-            }}
-            onValueChange={onValueChange}
-            onTrigger={onTrigger}
-            errors={errors.countryId}
-            errorMess={{ required: "VUI LÒNG CHỌN QUỐC GIA" }}
-          />
-          <PickerBlock
-            data={nations}
-            refresh={0}
-            search="Nhập dân tộc"
-            placeholder="DÂN TỘC"
-            item={{
-              itemOwner: "nationId",
-              itemLabel: "Name",
-              itemValue: "Id",
-            }}
-            onValueChange={onValueChange}
-            onTrigger={onTrigger}
-            errors={errors.nationId}
-            errorMess={{
-              required: "VUI LÒNG CHỌN DÂN TỘC",
-            }}
-          />
-          <PickerBlock
-            data={cities}
-            refresh={2}
-            search="Nhập tỉnh / thành phố"
-            placeholder="TỈNH / THÀNH PHỐ"
-            item={{
-              itemOwner: "cityId",
-              itemLabel: "Name",
-              itemValue: "Id",
-            }}
-            onValueChange={onValueChange}
-            onTrigger={onTrigger}
-            errors={errors.cityId}
-            errorMess={{
-              required: "VUI LÒNG CHỌN TỈNH THÀNH PHỐ",
-            }}
-          />
-          <View style={{ flexDirection: "row" }}>
-            <View style={{ flex: 1 }}>
-              <PickerBlock
-                data={districts}
-                refresh={3}
-                search="Nhập quận / huyện"
-                placeholder="QUẬN / HUYỆN"
-                item={{
-                  itemOwner: "districtId",
-                  itemLabel: "Name",
-                  itemValue: "Id",
-                }}
-                onValueChange={onValueChange}
-                onTrigger={onTrigger}
-                errors={errors.districtId}
-                errorMess={{
-                  required: "VUI LÒNG CHỌN QUẬN / HUYỆN",
-                }}
-              />
-            </View>
-            <View style={{ width: padding }} />
-            <View style={{ flex: 1 }}>
-              <PickerBlock
-                data={wards}
-                refresh={0}
-                search="Nhập phường xã"
-                placeholder="PHƯỜNG / XÃ"
-                item={{
-                  itemOwner: "wardId",
-                  itemLabel: "Name",
-                  itemValue: "Id",
-                }}
-                onValueChange={onValueChange}
-                onTrigger={onTrigger}
-                errors={errors.wardId}
-                errorMess={{
-                  required: "VUI LÒNG CHỌN PHƯỜNG XÃ",
-                }}
-              />
-            </View>
+        <HeadingAuth text="Đăng ký ngay" align="left" />
+        <View style={{ paddingHorizontal: 20 }}>
+          <View style={{ paddingTop: 40 }}>
+            <Text style={{ fontSize: 28, fontStyle: "Bold" }}>
+              Thông tin chính
+            </Text>
           </View>
-          <InputBlock
-            owner="address"
-            placeholder="ĐỊA CHỈ"
-            onValueChange={onValueChange}
-            onTrigger={onTrigger}
-            errors={errors.address}
-            errorMess={{
-              required: "ĐỊA CHỈ KHÔNG ĐƯỢC BỎ TRỐNG",
-              minLength: "ĐỊA CHỈ PHẢI TỪ 8 ĐẾN 128 KÍ TỰ",
-              maxLength: "ĐỊA CHỈ PHẢI TỪ 8 ĐẾN 128 KÍ TỰ",
-              pattern: "ĐỊA CHỈ KHÔNG ĐƯỢC CÓ KÍ TỰ ĐẶC BIỆT",
-            }}
-          />
-          <InputBlock
-            hide
-            owner="password"
-            placeholder="MẬT KHẨU"
-            onValueChange={onValueChange}
-            onTrigger={onTrigger}
-            errors={errors.password}
-            errorMess={{
-              required: "Mật khẩu không được bỏ trống",
-              minLength: "Mật khẩu phải từ 8 đến 128 kí tự",
-              maxLength: "Mật khẩu phải từ 8 đến 128 kí tự",
-              pattern: "Mật khẩu không được có kí tự đặc biệt",
-            }}
-          />
-          <InputBlock
-            hide
-            owner="confirmPassword"
-            placeholder="NHẬP LẠI MẬT KHẨU"
-            onValueChange={onValueChange}
-            onTrigger={onTrigger}
-            errors={errors.confirmPassword}
-            errorMess={{
-              required: "Mật khẩu không được bỏ trống",
-              minLength: "Mật khẩu phải từ 8 đến 128 kí tự",
-              maxLength: "Mật khẩu phải từ 8 đến 128 kí tự",
-              pattern: "Mật khẩu không được có kí tự đặc biệt",
-              validate: "Vui lòng nhập giống mật khẩu trên",
-            }}
-          />
-          <View style={styles.commit}>
+
+          <Form style={styles.frmcontrol}>
+            <InputBlock
+              owner="userFullName"
+              placeholder="HỌ VÀ TÊN"
+              onValueChange={onValueChange}
+              onTrigger={onTrigger}
+              errors={errors.userFullName}
+              errorMess={{
+                required: "Họ và tên không được bỏ trống",
+                minLength: "Họ và tên phải ít nhất 6 kí tự",
+                pattern: "Họ và tên không hợp lệ",
+              }}
+            />
+            <InputBlock
+              userName
+              keyboardType="numeric"
+              owner="phone"
+              placeholder="SỐ ĐIỆN THOẠI"
+              onValueChange={onValueChange}
+              onTrigger={onTrigger}
+              errors={errors.phone}
+              errorMess={{
+                required: "Số điện thoại không được để trống",
+                minLength: "Số điện thoại phải từ 9 đến 11 kí tự",
+                maxLength: "Số điện thoại phải từ 9 đến 11 kí tự",
+                pattern: "Số điện thoại không hợp lệ",
+              }}
+            />
+            <InputBlock
+              owner="email"
+              placeholder="EMAIL"
+              onValueChange={onValueChange}
+              onTrigger={onTrigger}
+              errors={errors.email}
+              errorMess={{
+                required: "Email không được bỏ trống",
+                validate: "Email không hợp lệ",
+              }}
+            />
+
+            <View style={{ paddingTop: 40 }}>
+              <Text style={{ fontSize: 28, fontStyle: "Bold" }}>Mật khẩu</Text>
+            </View>
+            <InputBlock
+              hide
+              owner="password"
+              placeholder="MẬT KHẨU"
+              onValueChange={onValueChange}
+              onTrigger={onTrigger}
+              errors={errors.password}
+              errorMess={{
+                required: "Mật khẩu không được bỏ trống",
+                minLength: "Mật khẩu phải từ 8 đến 128 kí tự",
+                maxLength: "Mật khẩu phải từ 8 đến 128 kí tự",
+                pattern: "Mật khẩu không được có kí tự đặc biệt",
+              }}
+            />
+            <InputBlock
+              hide
+              owner="confirmPassword"
+              placeholder="NHẬP LẠI MẬT KHẨU"
+              onValueChange={onValueChange}
+              onTrigger={onTrigger}
+              errors={errors.confirmPassword}
+              errorMess={{
+                required: "Mật khẩu không được bỏ trống",
+                minLength: "Mật khẩu phải từ 8 đến 128 kí tự",
+                maxLength: "Mật khẩu phải từ 8 đến 128 kí tự",
+                pattern: "Mật khẩu không được có kí tự đặc biệt",
+                validate: "Vui lòng nhập giống mật khẩu trên",
+              }}
+            />
+            <View style={{ paddingTop: 40 }}>
+              <Text style={{ fontSize: 28, fontStyle: "Bold" }}>
+                Thông tin chi tiết
+              </Text>
+            </View>
+            <InputBlock
+              keyboardType="numeric"
+              owner="identityCardNo"
+              placeholder="CMND / CCCD"
+              onValueChange={onValueChange}
+              onTrigger={onTrigger}
+              errors={errors.identityCardNo}
+              errorMess={{
+                required: "CMND / CCCD không được bỏ trống",
+                minLength: "CMND / CCCD phải ít nhất 9 kí tự",
+                pattern: "CMND / CCCD không hợp lệ",
+              }}
+            />
+            <DateTimePickerBlock
+              owner="birthDate"
+              placeholder="NGÀY SINH"
+              errors={errors.birthDate}
+              errorMess={{ required: "Vui lòng chọn ngày sinh" }}
+              onTrigger={onTrigger}
+              onValueChange={onValueChange}
+              maximumDate={new Date()}
+            />
+            <PickerBlock
+              refresh={0}
+              data={genders}
+              picker
+              placeholder="GIỚI TÍNH"
+              item={{
+                itemOwner: "gender",
+                itemLabel: "Name",
+                itemValue: "Id",
+              }}
+              onValueChange={onValueChange}
+              onTrigger={onTrigger}
+              errors={errors.gender}
+              errorMess={{ required: "VUI LÒNG CHỌN GIỚI TÍNH" }}
+            />
+            <PickerBlock
+              data={jobs}
+              refresh={0}
+              search="Nhập nghề nghiệp"
+              placeholder="NGHỀ NGHIỆP"
+              item={{
+                itemOwner: "jobId",
+                itemLabel: "Name",
+                itemValue: "Id",
+              }}
+              onValueChange={onValueChange}
+              onTrigger={onTrigger}
+              errors={errors.jobId}
+              errorMess={{
+                required: "VUI LÒNG CHỌN NGHỀ NGHIỆP",
+              }}
+            />
+            <PickerBlock
+              data={countries}
+              refresh={1}
+              search="Nhập quốc gia"
+              placeholder="QUỐC GIA"
+              item={{
+                itemOwner: "countryId",
+                itemLabel: "Name",
+                itemValue: "Id",
+              }}
+              onValueChange={onValueChange}
+              onTrigger={onTrigger}
+              errors={errors.countryId}
+              errorMess={{ required: "VUI LÒNG CHỌN QUỐC GIA" }}
+            />
+            <PickerBlock
+              data={nations}
+              refresh={0}
+              search="Nhập dân tộc"
+              placeholder="DÂN TỘC"
+              item={{
+                itemOwner: "nationId",
+                itemLabel: "Name",
+                itemValue: "Id",
+              }}
+              onValueChange={onValueChange}
+              onTrigger={onTrigger}
+              errors={errors.nationId}
+              errorMess={{
+                required: "VUI LÒNG CHỌN DÂN TỘC",
+              }}
+            />
+            <PickerBlock
+              data={cities}
+              refresh={2}
+              search="Nhập tỉnh / thành phố"
+              placeholder="TỈNH / THÀNH PHỐ"
+              item={{
+                itemOwner: "cityId",
+                itemLabel: "Name",
+                itemValue: "Id",
+              }}
+              onValueChange={onValueChange}
+              onTrigger={onTrigger}
+              errors={errors.cityId}
+              errorMess={{
+                required: "VUI LÒNG CHỌN TỈNH THÀNH PHỐ",
+              }}
+            />
             <View style={{ flexDirection: "row" }}>
-              {!checkbox && (
-                <TouchableWithoutFeedback onPress={toggleCheckbox}>
-                  <View style={styles.commitcheckboxoff} />
-                </TouchableWithoutFeedback>
-              )}
-              {checkbox && (
-                <TouchableWithoutFeedback onPress={toggleCheckbox}>
-                  <AnimatedLottieView
-                    progress={1}
-                    source={require("@/assets/icons/checkbox")}
-                    style={styles.commitcheckboxon}
-                  />
-                </TouchableWithoutFeedback>
-              )}
-              <Text style={styles.committext}>
-                Tôi đông ý với{" "}
-                <Text style={styles.commitlink}>điều khoản sử dụng</Text> &{" "}
-                <Text style={styles.commitlink}>chính sách bảo mật</Text>
-              </Text>
+              <View style={{ flex: 1 }}>
+                <PickerBlock
+                  data={districts}
+                  refresh={3}
+                  search="Nhập quận / huyện"
+                  placeholder="QUẬN / HUYỆN"
+                  item={{
+                    itemOwner: "districtId",
+                    itemLabel: "Name",
+                    itemValue: "Id",
+                  }}
+                  onValueChange={onValueChange}
+                  onTrigger={onTrigger}
+                  errors={errors.districtId}
+                  errorMess={{
+                    required: "VUI LÒNG CHỌN QUẬN / HUYỆN",
+                  }}
+                />
+              </View>
+              <View style={{ width: padding }} />
+              <View style={{ flex: 1 }}>
+                <PickerBlock
+                  data={wards}
+                  refresh={0}
+                  search="Nhập phường xã"
+                  placeholder="PHƯỜNG / XÃ"
+                  item={{
+                    itemOwner: "wardId",
+                    itemLabel: "Name",
+                    itemValue: "Id",
+                  }}
+                  onValueChange={onValueChange}
+                  onTrigger={onTrigger}
+                  errors={errors.wardId}
+                  errorMess={{
+                    required: "VUI LÒNG CHỌN PHƯỜNG XÃ",
+                  }}
+                />
+              </View>
             </View>
-            {errors.agreement && (
-              <Text style={styles.error}>
-                Vui lòng đồng ý với điều khoản và chính sách của chúng tôi
-              </Text>
-            )}
-          </View>
-          <TouchableWithoutFeedback
-            onPress={loading ? undefined : handleSubmit(_onPress, _onError)}
-          >
-            <View style={styles.submit}>
-              <Text style={styles.submittext}>Đăng ký</Text>
+            <InputBlock
+              owner="address"
+              placeholder="ĐỊA CHỈ"
+              onValueChange={onValueChange}
+              onTrigger={onTrigger}
+              errors={errors.address}
+              errorMess={{
+                required: "ĐỊA CHỈ KHÔNG ĐƯỢC BỎ TRỐNG",
+                minLength: "ĐỊA CHỈ PHẢI TỪ 8 ĐẾN 128 KÍ TỰ",
+                maxLength: "ĐỊA CHỈ PHẢI TỪ 8 ĐẾN 128 KÍ TỰ",
+                pattern: "ĐỊA CHỈ KHÔNG ĐƯỢC CÓ KÍ TỰ ĐẶC BIỆT",
+              }}
+            />
+
+            <View style={styles.commit}>
+              <View style={{ flexDirection: "row" }}>
+                {!checkbox && (
+                  <TouchableWithoutFeedback onPress={toggleCheckbox}>
+                    <View style={styles.commitcheckboxoff} />
+                  </TouchableWithoutFeedback>
+                )}
+                {checkbox && (
+                  <TouchableWithoutFeedback onPress={toggleCheckbox}>
+                    <AnimatedLottieView
+                      progress={1}
+                      source={require("@/assets/icons/checkbox")}
+                      style={styles.commitcheckboxon}
+                    />
+                  </TouchableWithoutFeedback>
+                )}
+                <Text style={styles.committext}>
+                  Tôi đông ý với{" "}
+                  <Text style={styles.commitlink}>điều khoản sử dụng</Text> &{" "}
+                  <Text style={styles.commitlink}>chính sách bảo mật</Text>
+                </Text>
+              </View>
+              {errors.agreement && (
+                <Text style={styles.error}>
+                  Vui lòng đồng ý với điều khoản và chính sách của chúng tôi
+                </Text>
+              )}
             </View>
-          </TouchableWithoutFeedback>
-        </Form>
+            <TouchableWithoutFeedback
+              onPress={loading ? undefined : handleSubmit(_onPress, _onError)}
+            >
+              <View style={styles.submit}>
+                <Text style={styles.submittext}>Đăng ký</Text>
+              </View>
+            </TouchableWithoutFeedback>
+          </Form>
+        </View>
       </Content>
       <ModalLoading visible={loading} />
     </Container>
@@ -639,8 +657,10 @@ const styles = StyleSheet.create({
   },
   submit: {
     elevation: 4,
-    backgroundColor: blueColor,
-    alignSelf: "flex-end",
+    width: 332,
+    height: 57,
+    backgroundColor: "#142977",
+    alignSelf: "center",
     marginVertical: 24,
     paddingHorizontal: 57,
     paddingTop: 15,
@@ -652,6 +672,7 @@ const styles = StyleSheet.create({
     letterSpacing: 1.25,
     color: "#fff",
     fontFamily: "SFProDisplay-Semibold",
+    paddingLeft: 75,
   },
   loading: {
     ...(StyleSheet.absoluteFill as {}),

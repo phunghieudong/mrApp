@@ -29,6 +29,7 @@ import { Modalize } from "react-native-modalize";
 import { _format } from "@/utils";
 import { UserData } from "@/types/User";
 import Swiper from "react-native-swiper";
+import { ScrollView } from "react-native-gesture-handler";
 
 const { hostURL } = settings;
 const { mainColorText, borderColor, padding, mainColor } = settings.styles;
@@ -56,8 +57,9 @@ const DashboardScreen = (props: DashboardProps) => {
 
   return (
     <View style={styles.container}>
-      <HeaderRoot title="Trang chủ" />
-      {/* <View style={styles.info}>
+      <ScrollView>
+        <HeaderRoot title="" />
+        {/* <View style={styles.info}>
         <Image
           defaultSource={require("@/assets/images/no-avatar.jpg")}
           onError={() => setAvatar(null)}
@@ -70,72 +72,72 @@ const DashboardScreen = (props: DashboardProps) => {
         <Text style={styles.code}>{"TA - " + user.Id}</Text>
       </View> */}
 
-      <Swiper
-        showsButtons={false}
-        height={160}
-        containerStyle={{ flex: 0 }}
-        activeDotColor={mainColor}
-        dotColor="rgba(0, 0, 0, .2)"
-        paginationStyle={{
-          bottom: 8,
-        }}
-      >
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "row",
-            justifyContent: "flex-start",
-            padding: 24,
-            alignItems: "center",
-            backgroundColor: "#9DD6EB",
+        <Swiper
+          showsButtons={false}
+          height={160}
+          containerStyle={{ flex: 0 }}
+          activeDotColor={mainColor}
+          dotColor="rgba(0, 0, 0, .2)"
+          paginationStyle={{
+            bottom: 8,
           }}
         >
-          <Image
-            defaultSource={require("@/assets/images/no-avatar.jpg")}
-            onError={() => setAvatar(null)}
-            source={
-              !avatar
-                ? require("@/assets/images/no-avatar.jpg")
-                : { uri: avatar }
-            }
-            style={styles.avatar}
-          />
           <View
             style={{
+              flex: 1,
+              flexDirection: "row",
+              justifyContent: "flex-start",
               padding: 24,
-              flexDirection: "column",
-              alignItems: "flex-start",
+              alignItems: "center",
+              backgroundColor: "#e8f5f8",
             }}
           >
-            <View style={{ justifyContent: "flex-end" }}>
-              <Text style={styles.fullname}>{user.UserFullName}</Text>
-            </View>
+            <Image
+              defaultSource={require("@/assets/images/no-avatar.jpg")}
+              onError={() => setAvatar(null)}
+              source={
+                !avatar
+                  ? require("@/assets/images/no-avatar.jpg")
+                  : { uri: avatar }
+              }
+              style={styles.avatar}
+            />
             <View
               style={{
-                justifyContent: "center",
-                backgroundColor: "#FFB703",
-                width: 151,
-                height: 36,
-                borderRadius: 8,
-                alignItems: "center",
-                flexDirection: "row",
+                padding: 24,
+                flexDirection: "column",
+                alignItems: "flex-start",
               }}
             >
-              <Text style={styles.code}>{"TA - " + user.Id}</Text>
-              <Iconnew
-                name="file-multiple-outline"
+              <View style={{ justifyContent: "flex-end" }}>
+                <Text style={styles.fullname}>{user.UserFullName}</Text>
+              </View>
+              <View
                 style={{
+                  justifyContent: "center",
                   backgroundColor: "#FFB703",
-                  color: "white",
-                  borderRadius: 5,
-                  fontSize: 20,
-                  paddingRight: 30,
+                  width: 151,
+                  height: 36,
+                  borderRadius: 8,
+                  alignItems: "center",
+                  flexDirection: "row",
                 }}
-              />
+              >
+                <Text style={styles.code}>{"TA - " + user.Id}</Text>
+                <Iconnew
+                  name="file-multiple-outline"
+                  style={{
+                    backgroundColor: "#FFB703",
+                    color: "white",
+                    borderRadius: 5,
+                    fontSize: 20,
+                    paddingRight: 30,
+                  }}
+                />
+              </View>
             </View>
           </View>
-        </View>
-        {/* <View
+          {/* <View
           style={{
             flex: 1,
             justifyContent: "center",
@@ -150,7 +152,7 @@ const DashboardScreen = (props: DashboardProps) => {
             <AntDesign name="stepforward" size={24} color="black" />
           </View>
         </View> */}
-        {/* <View
+          {/* <View
           style={{
             flex: 1,
             justifyContent: "center",
@@ -162,80 +164,124 @@ const DashboardScreen = (props: DashboardProps) => {
             Image 3
           </Text>
         </View> */}
-      </Swiper>
-      <View>
-        <View>
-          <Text>Danh mục</Text>
+        </Swiper>
+        <View style={{ paddingTop: 40, paddingLeft: 24 }}>
+          <View>
+            <Text style={styles.fullname}>Danh mục</Text>
+          </View>
+          <View>
+            <Text style={{ color: "#023047" }}>Hôm nay bạn muốn xem gì ?</Text>
+          </View>
         </View>
-        <View>
-          <Text>Hôm nay bạn muốn xem gì ?</Text>
-        </View>
-      </View>
-      <View style={styles.body}>
-        <View style={styles.menu}>
-          <View style={[styles.flex, { alignItems: "stretch" }]}>
-            <View style={styles.menubox}>
+
+        <View style={styles.body}>
+          <View
+            style={{
+              justifyContent: "space-evenly",
+              paddingTop: 44,
+            }}
+          >
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "flex-start",
+                backgroundColor: "#FFB703",
+                height: 116,
+                width: 396,
+                borderRadius: 28,
+                marginHorizontal: 16,
+              }}
+            >
               <TouchableOpacity
                 onPress={() => navigation.navigate("ExaminationCalendar")}
                 activeOpacity={0.9}
               >
                 <View
-                  style={[
-                    styles.menuimgbox,
-                    {
-                      backgroundColor: "#FB8500",
-                    },
-                  ]}
+                  style={{
+                    flexDirection: "row",
+                    paddingLeft: 22,
+                    alignItems: "center",
+                    paddingTop: 20,
+                  }}
                 >
-                  <ExaminationCalendarIcon />
-                  <View style={[styles.badge, { backgroundColor: "#FB8500" }]}>
-                    <Text style={styles.badgetext}>4</Text>
+                  <View
+                    style={{
+                      borderRadius: 100,
+                      backgroundColor: "#e5a503",
+                      height: 40,
+                      width: 40,
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <ExaminationCalendarIcon />
+                  </View>
+                  <View style={{ paddingLeft: 40 }}>
+                    <Text style={{ color: "white", fontSize: 20 }}>
+                      Lịch hẹn sắp tới
+                    </Text>
+                  </View>
+                  <View style={{ paddingLeft: 40 }}>
+                    <Text style={{ color: "white", fontSize: 40 }}>04</Text>
                   </View>
                 </View>
-                <Text style={styles.menutext}>LỊCH KHÁM SẮP TỚI</Text>
               </TouchableOpacity>
             </View>
             <View
               style={{
-                borderLeftWidth: 1,
-                borderColor,
+                flexDirection: "row",
+                justifyContent: "flex-start",
+                backgroundColor: "#FB8500",
+                height: 116,
+                width: 396,
+                borderRadius: 28,
+                marginHorizontal: 16,
               }}
-            />
-            <View style={styles.menubox}>
+            >
               <TouchableOpacity
-                // onPress={() => modal.current?.open()}
-                onPress={() => modal.current?.close}
+                onPress={() => modal.current?.open()}
                 activeOpacity={0.9}
               >
                 <View
-                  style={[styles.menuimgbox, { backgroundColor: "#FFB703" }]}
+                  style={{
+                    flexDirection: "row",
+                    paddingLeft: 22,
+                    alignItems: "center",
+                    paddingTop: 20,
+                  }}
                 >
-                  <ScheduleIcon />
+                  <View
+                    style={{
+                      borderRadius: 100,
+                      backgroundColor: "#e27800",
+                      height: 40,
+                      width: 40,
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <ScheduleIcon />
+                  </View>
+                  <View style={{ paddingLeft: 40 }}>
+                    <Text style={{ color: "white", fontSize: 20 }}>
+                      Đặt lịch khám mới
+                    </Text>
+                  </View>
                 </View>
-                <Text style={styles.menutext}>ĐẶT LỊCH KHÁM</Text>
               </TouchableOpacity>
-              {/* <TouchableWithoutFeedback onPress={() => nav("NormalSchedule")}>
-                <View style={{ backgroundColor: "red" }}>
-                  <Text>Button1</Text>
-                </View>
-              </TouchableWithoutFeedback> */}
-              {/* <TouchableWithoutFeedback onPress={() => nav("SpecialSchedule")}>
-                <View style={{ backgroundColor: "blue" }}>
-                  <Text>Button2</Text>
-                </View>
-              </TouchableWithoutFeedback> */}
             </View>
-          </View>
-          <View
-            style={{
-              width: "100%",
-              height: 1,
-              borderTopWidth: 1,
-              borderColor,
-            }}
-          />
-          <View style={[styles.flex, { alignItems: "stretch" }]}>
-            <View style={styles.menubox}>
+
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "flex-start",
+                backgroundColor: "#37A6F7",
+                height: 116,
+                width: 396,
+                borderRadius: 28,
+                marginHorizontal: 16,
+              }}
+            >
               <TouchableOpacity
                 onPress={() =>
                   navigation.navigate("Profile", {
@@ -246,20 +292,44 @@ const DashboardScreen = (props: DashboardProps) => {
                 activeOpacity={0.9}
               >
                 <View
-                  style={[styles.menuimgbox, { backgroundColor: "#142977" }]}
+                  style={{
+                    flexDirection: "row",
+                    paddingLeft: 22,
+                    alignItems: "center",
+                    paddingTop: 20,
+                  }}
                 >
-                  <MedicalRecordIcon />
+                  <View
+                    style={{
+                      borderRadius: 100,
+                      backgroundColor: "#3195de",
+                      height: 40,
+                      width: 40,
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <MedicalRecordIcon />
+                  </View>
+                  <View style={{ paddingLeft: 40 }}>
+                    <Text style={{ color: "white", fontSize: 20 }}>
+                      Hồ sơ bệnh án
+                    </Text>
+                  </View>
                 </View>
-                <Text style={styles.menutext}>HỒ SƠ BỆNH ÁN</Text>
               </TouchableOpacity>
             </View>
             <View
               style={{
-                borderLeftWidth: 1,
-                borderColor,
+                flexDirection: "row",
+                justifyContent: "flex-start",
+                backgroundColor: "#219EBC",
+                height: 116,
+                width: 396,
+                borderRadius: 28,
+                marginHorizontal: 16,
               }}
-            />
-            <View style={styles.menubox}>
+            >
               <TouchableOpacity
                 onPress={() =>
                   navigation.navigate("Profile", { screen: "Vaccination" })
@@ -267,62 +337,76 @@ const DashboardScreen = (props: DashboardProps) => {
                 activeOpacity={0.9}
               >
                 <View
-                  style={[styles.menuimgbox, { backgroundColor: "#219EBC" }]}
+                  style={{
+                    flexDirection: "row",
+                    paddingLeft: 22,
+                    alignItems: "center",
+                    paddingTop: 20,
+                  }}
                 >
-                  {(!user.BirthDate ||
-                    _format.getAge(new Date(user.BirthDate))) < 12 && (
-                    <VaccinationCalendarIcon />
-                  )}
-                  {user.BirthDate &&
-                    _format.getAge(new Date(user.BirthDate)) >= 12 && (
-                      <AdultVaccinationCalendarIcon />
-                    )}
+                  <View
+                    style={{
+                      borderRadius: 100,
+                      backgroundColor: "#1e8ea9",
+                      height: 40,
+                      width: 40,
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <AdultVaccinationCalendarIcon />
+                  </View>
+                  <View style={{ paddingLeft: 40 }}>
+                    <Text style={{ color: "white", fontSize: 20 }}>
+                      Lịch chính ngừa
+                    </Text>
+                  </View>
                 </View>
-                <Text style={styles.menutext}>LỊCH TIÊM CHỦNG</Text>
               </TouchableOpacity>
             </View>
           </View>
-        </View>
-        <View
-          style={{ backgroundColor: "green", borderRadius: 20, padding: 20 }}
-        >
-          <TouchableOpacity>
-            <Text>Dich vu cham soc suc khoe (theo mo ta Mr.Oh)</Text>
-          </TouchableOpacity>
-        </View>
 
-        <View
-          style={{ backgroundColor: "yellow", borderRadius: 20, padding: 20 }}
-        >
-          <TouchableOpacity>
-            <Text>Modal</Text>
-          </TouchableOpacity>
+          <View
+            style={{ backgroundColor: "green", borderRadius: 20, padding: 20 }}
+          >
+            <TouchableOpacity>
+              <Text>Dich vu cham soc suc khoe (theo mo ta Mr.Oh)</Text>
+            </TouchableOpacity>
+          </View>
+
+          <View
+            style={{ backgroundColor: "yellow", borderRadius: 20, padding: 20 }}
+          >
+            <TouchableOpacity>
+              <Text>Modal</Text>
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
-      <ModalBottom heading="Đặt lịch khám">
-        <View style={{ paddingHorizontal: 30, paddingVertical: 20 }}>
-          <TouchableWithoutFeedback onPress={() => nav("NormalSchedule")}>
-            <View style={[styles.box, { marginBottom: 6 }]}>
-              <Text style={styles.link}>ĐẶT LỊCH KHÁM THƯỜNG</Text>
-              <Icon
-                type="Ionicons"
-                name="chevron-forward-sharp"
-                style={styles.icon}
-              />
-            </View>
-          </TouchableWithoutFeedback>
-          <TouchableWithoutFeedback onPress={() => nav("SpecialSchedule")}>
-            <View style={[styles.box]}>
-              <Text style={styles.link}>ĐẶT LỊCH KHÁM DỊCH VỤ</Text>
-              <Icon
-                type="Ionicons"
-                name="chevron-forward-sharp"
-                style={styles.icon}
-              />
-            </View>
-          </TouchableWithoutFeedback>
-        </View>
-      </ModalBottom>
+        <ModalBottom heading="Đặt lịch khám">
+          <View style={{ paddingHorizontal: 30, paddingVertical: 20 }}>
+            <TouchableWithoutFeedback onPress={() => nav("NormalSchedule")}>
+              <View style={[styles.box, { marginBottom: 6 }]}>
+                <Text style={styles.link}>ĐẶT LỊCH KHÁM THƯỜNG</Text>
+                <Icon
+                  type="Ionicons"
+                  name="chevron-forward-sharp"
+                  style={styles.icon}
+                />
+              </View>
+            </TouchableWithoutFeedback>
+            <TouchableWithoutFeedback onPress={() => nav("SpecialSchedule")}>
+              <View style={[styles.box]}>
+                <Text style={styles.link}>ĐẶT LỊCH KHÁM DỊCH VỤ</Text>
+                <Icon
+                  type="Ionicons"
+                  name="chevron-forward-sharp"
+                  style={styles.icon}
+                />
+              </View>
+            </TouchableWithoutFeedback>
+          </View>
+        </ModalBottom>
+      </ScrollView>
     </View>
   );
 };
@@ -354,7 +438,7 @@ const styles = StyleSheet.create({
     letterSpacing: 0.25,
     fontFamily: "SFProDisplay-Bold",
     color: mainColorText,
-    textAlign: "center",
+    textAlign: "left",
   },
   code: {
     color: "white",
@@ -379,7 +463,6 @@ const styles = StyleSheet.create({
   menubox: {
     width: "50%",
     padding: 20,
-    alignItems: "center",
   },
   menuimgbox: {
     padding: 20,

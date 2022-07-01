@@ -240,7 +240,7 @@ const ForgotPasswordScreen: FC<ForgotPasswordProps> = ({ navigation }) => {
               <Animated.Text
                 style={[styles.label, { top: animatedLabelEmail }]}
               >
-                EMAIL
+                Tên đăng nhập
               </Animated.Text>
               <Input
                 placeholderTextColor="rgba(0, 0, 0, .5)"
@@ -279,7 +279,7 @@ const ForgotPasswordScreen: FC<ForgotPasswordProps> = ({ navigation }) => {
               <Animated.Text
                 style={[styles.label, { top: animatedLabelPhone }]}
               >
-                SỐ ĐIỆN THOẠI
+                Số điện thoại
               </Animated.Text>
               <Input
                 keyboardType="numeric"
@@ -374,8 +374,10 @@ const styles = StyleSheet.create({
     fontFamily: "SFProDisplay-Medium",
   },
   submit: {
-    backgroundColor: blueColor,
+    backgroundColor: "#142977",
     marginTop: 40,
+    width: 332,
+    height: 57,
     alignSelf: "center",
     paddingHorizontal: 56,
     paddingTop: 15,
@@ -394,6 +396,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontFamily: "SFProDisplay-Bold",
     color: "#fff",
+    marginLeft: 65,
   },
   loading: {
     ...(StyleSheet.absoluteFill as {}),
